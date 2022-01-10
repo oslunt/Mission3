@@ -1,0 +1,26 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+img {
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+li {
+    list-style-type: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 35%;
+}
+
+input {
+    text-align: center;
+}
