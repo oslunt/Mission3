@@ -1,7 +1,15 @@
-﻿$("#calc").click(function () {
+﻿// Function that calculates the grade when the calculate button is pressed
+
+$("#calc").click(function () {
+
+    // Adds up all the individual assignments and multiplies by their respective weights 
     let percent = (($("#assignments").val() * 55) + ($("#group_project").val() * 5) +
         ($("#quizzes").val() * 10) + ($("#exams").val() * 20) + ($("#intex").val() * 10)) / 100;
+
+    // Sets base grade as E
     let grade = 'E';
+
+    //Goes through and checks the total compared to the grade cutoffs and updates the letter grade
     if (percent >= 94) {
         grade = 'A';
     }
@@ -35,7 +43,10 @@
     else if (percent >= 60) {
         grade = 'D-';
     }
-    //alert("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%");
+
+    //returns and overwrites the result <p> with the letter grade and the percent
     $("#result").html("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%");
+
+    // returning false so that the page does not automatically update when form is submitted 
     return false;
 })

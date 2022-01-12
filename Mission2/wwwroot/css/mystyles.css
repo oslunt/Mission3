@@ -1,4 +1,6 @@
-﻿body {
+﻿/* Most of the custom formatting is to just center everything and give it nicer looking margins */
+
+body {
     display: flex;
     justify-content: center;
     text-align: center;
