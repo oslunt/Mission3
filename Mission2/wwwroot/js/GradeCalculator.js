@@ -1,6 +1,5 @@
 ﻿// Function that calculates the grade when the calculate button is pressed
-
-$("#calc").click(function () {
+$("#calc").submit(function () {
 
     // Adds up all the individual assignments and multiplies by their respective weights 
     let percent = (($("#assignments").val() * 55) + ($("#group_project").val() * 5) +
@@ -45,8 +44,5 @@ $("#calc").click(function () {
     }
 
     //returns and overwrites the result <p> with the letter grade and the percent
-    $("#result").html("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%");
-
-    // returning false so that the page does not automatically update when form is submitted 
-    return false;
+    alert("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%");
 })

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+
+    <!--Icon and Title-->
+    <link id="page_favicon" href="~/img/333-3330555_pyramid-free-icon-icon.png" rel="icon" type="image/x-icon" />
+    <title>@ViewData["Title"]</title>
+    <!--Linked stylesheets (bootstrap and my own)-->
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/mystyles.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="GradeCalc">Grade Calculator</a>
+    </nav>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!--Javascript for the bootstrap, to use jquery, and for the grade calculator-->
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/jquery-3.6.0.min.js"></script>
+    <script src="~/js/GradeCalculator.js"></script>
+</body>
+</html>
