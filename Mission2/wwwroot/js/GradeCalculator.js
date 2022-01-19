@@ -1,4 +1,5 @@
-﻿if (typeof (Storage) !== "undefined" && sessionStorage.getItem('result') && $("#errors ul li").text() === "") {
+﻿// Checks to see if there are no errors and if not shows the stored grade value
+if (typeof (Storage) !== "undefined" && sessionStorage.getItem('result') && $("#errors ul li").text() === "") {
     $("#result").html(sessionStorage.getItem('result'));
 }
 
@@ -48,5 +49,8 @@ $("#calc").submit(function () {
     }
 
     $("#result").html("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%");
+
+    // Storing the data in the sessionStorage so that when the form submits and refreshes the page and validates
+    // using models, I still have access to the grade calculated
     sessionStorage.setItem("result", ("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%"));
 })
