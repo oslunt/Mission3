@@ -1,4 +1,8 @@
-﻿// Function that calculates the grade when the calculate button is pressed
+﻿if (typeof (Storage) !== "undefined" && sessionStorage.getItem('result') && $("#errors ul li").text() === "") {
+    $("#result").html(sessionStorage.getItem('result'));
+}
+
+// Function that calculates the grade when the calculate button is pressed
 $("#calc").submit(function () {
 
     // Adds up all the individual assignments and multiplies by their respective weights 
@@ -43,6 +47,6 @@ $("#calc").submit(function () {
         grade = 'D-';
     }
 
-    //returns and overwrites the result <p> with the letter grade and the percent
-    alert("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%");
+    $("#result").html("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%");
+    sessionStorage.setItem("result", ("Letter Grade: " + grade + "\n" + "Percent: " + percent + "%"));
 })
